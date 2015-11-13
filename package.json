@@ -1,0 +1,33 @@
+{
+  "name": "gtran-kmz",
+  "version": "1.0.0",
+  "description": "convert geojson to kmz file",
+  "main": "src/script/js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haoliangyu/gtran-kmz.git"
+  },
+  "keywords": [
+    "geojson",
+    "kmz"
+  ],
+  "author": "Haoliang Yu <haholiang.yu@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haoliangyu/gtran-kmz/issues"
+  },
+  "homepage": "https://github.com/haoliangyu/gtran-kmz#readme",
+  "dependencies": {
+    "gtran-kml": "^1.0.0",
+    "jszip": "^2.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "log4js": "^0.6.27",
+    "mocha": "^2.3.3",
+    "promise": "^7.0.4"
+  }
+}
