@@ -1,6 +1,6 @@
 {
   "name": "gtran-kmz",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "convert geojson to kmz file",
   "main": "src/script.js",
   "scripts": {
