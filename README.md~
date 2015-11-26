@@ -39,7 +39,7 @@ var pointSymbol = {
 // if specific promise library is needed
 kmz.setPromiseLib(require('bluebird'));
 
-// Save geojson into KMZ file
+// Save geojson into CSV file
 kmz.fromGeoJson(geojson, 'point.kmz', {
     symbol: pointSymbol
 })
