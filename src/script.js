@@ -11,7 +11,7 @@ exports.setPromiseLib = setPromiseLib;
 exports.fromGeoJson = function(geojson, fileName, options) {
     if (!Promise) { setPromiseLib(); }
 
-    return kml.fromGeoJson(geojson).then(function(file) {
+    return kml.fromGeoJson(geojson, undefined, options).then(function(file) {
         var zip = new JSZip();
         zip.file('doc.kml', file.data);
 
