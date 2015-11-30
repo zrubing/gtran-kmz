@@ -41,7 +41,8 @@ kmz.setPromiseLib(require('bluebird'));
 
 // Save geojson into KMZ file
 kmz.fromGeoJson(geojson, 'point.kmz', {
-    symbol: pointSymbol
+    symbol: pointSymbol,
+    name: 'Name'
 })
 .then(function(fileName) {
     console.log('KMZ file has been saved at:' + fileName);
