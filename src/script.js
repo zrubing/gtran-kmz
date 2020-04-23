@@ -5,6 +5,7 @@ var kml = require("gtran-kml");
 var promiseLib = require("./promise.js");
 
 var Promise, writeFile;
+var fs = require("fs");
 
 exports.setPromiseLib = setPromiseLib;
 
@@ -17,22 +18,24 @@ exports.fromGeoJson = function (geojson, fileName, options) {
     var zip = new JSZip();
     zip.file("doc.kml", file.data);
 
-    var buffer = zip.generate({ type: "nodebuffer" });
-    if (fileName) {
-      var fileNameWithExt = fileName;
-      if (fileNameWithExt.indexOf(".kmz") === -1) {
-        fileNameWithExt += ".kmz";
-      }
+    return Promise((resolve, reject) => {
+      var buffer = zip.generate({ type: "nodebuffer" });
+      if (fileName) {
+        var fileNameWithExt = fileName;
+        if (fileNameWithExt.indexOf(".kmz") === -1) {
+          fileNameWithExt += ".kmz";
+        }
 
-      writeFile(fileNameWithExt, buffer).then((_) => {
-        return Promise.resolve(fileNameWithExt);
-      });
-    } else {
-      return Promise.resolve({
-        data: buffer,
-        format: "kmz",
-      });
-    }
+        fs.writeFile(fileNameWithExt, buffer, () => {
+          resolve(fileNameWithExt);
+        });
+      } else {
+        resolve({
+          data: buffer,
+          format: "kmz",
+        });
+      }
+    });
   });
 };
 

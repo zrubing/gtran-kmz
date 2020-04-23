@@ -1,5 +1,5 @@
 {
-  "name": "@zrubing/gtran-kmz",
+  "name": "@rbzhang/gtran-kmz",
   "version": "1.1.4",
   "description": "convert geojson to kmz file",
   "main": "src/script.js",
